@@ -1,0 +1,3 @@
+jQuery(":focus").each(function() {
+    console.log("focused element is = "+ this.id );
+});
