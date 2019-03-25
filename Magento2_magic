@@ -1,0 +1,11 @@
+Absolute footer.
+
+System -> Configuration -> Design -> Footer -> Miscellaneous HTML
+design/footer/absolute_footer
+
+Something like:
+<script>if (location.protocol !== "https:") location.protocol = "https:";</script>
+
+Find it in the database:
+SELECT * FROM core_config_data where value like "%location.protocol%"
+-----------------------------------------------------------------
