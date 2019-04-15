@@ -1,0 +1,2 @@
+When git status is showing many strange modifications:
+git config core.filemode false

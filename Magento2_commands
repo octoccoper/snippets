@@ -1,8 +1,33 @@
-Deploying project
+1) Deploying project
 
 rm -rf var/cache/* var/page_cache/* var/view_preprocessed/* var/tmp/* generated/* pub/static/* ; php bin/magento setup:upgrade ; php bin/magento setup:di:compile ; php bin/magento indexer:reindex ; php bin/magento setup:static-content:deploy -f en_US de_DE
 
 
-Create new admin user
+2) Create new admin user
 
 UPDATE admin_user SET `password` = SHA2('NewPassword', 256) WHERE `username`='admin';
+
+
+3) Basic permissions setup
+
+Set Magento Permissions:
+
+cd <your Magento install dir> 
+
+find . -type f -exec chmod 664 {} \;
+
+find . -type d -exec chmod 775 {} \;
+
+find ./var -type d -exec chmod 777 {} \;
+
+find ./pub/media -type d -exec chmod 777 {} \;
+
+find ./pub/static -type d -exec chmod 777 {} \;
+
+chmod 777 ./app/etc
+
+chmod 644 ./app/etc/*.xml
+
+chown -R owner:group . (including the last point dot, sets owner for all files under current Magento 2 installation) - Make sure you replace <owner>:<group> with your current user and the group that it's in. The most common ones are www-data:www-data, root:root, www-data:magento, etc however this can differ from server to server. 
+
+chmod u+x bin/magento (add the execute permissions for bin/magento)  
