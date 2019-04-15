@@ -1,0 +1,4 @@
+
+Import a database with MySQL from terminal.
+
+mysql -u <username> -p <databasename> < <filename.sql>
