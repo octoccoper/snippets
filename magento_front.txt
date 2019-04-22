@@ -1,0 +1,12 @@
+Add translation for the element.
+
+<div data-label="<?php echo __('Shopping'); ?>" data-block="minicart" class="minicart-wrapper"> (edited) 
+&:after {
+       position: absolute;
+       content: attr(data-label);
+       color: #000;
+       font-size: 11px;
+       bottom: 24px;
+       right: -10px;
+       opacity: .5;
+}
