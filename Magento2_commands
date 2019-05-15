@@ -31,3 +31,10 @@ chmod 644 ./app/etc/*.xml
 chown -R owner:group . (including the last point dot, sets owner for all files under current Magento 2 installation) - Make sure you replace <owner>:<group> with your current user and the group that it's in. The most common ones are www-data:www-data, root:root, www-data:magento, etc however this can differ from server to server. 
 
 chmod u+x bin/magento (add the execute permissions for bin/magento)  
+
+4) backup: # mysqldump -u user -p[user_password] [database_name] | gzip > dumpfilename.sql.gz
+
+
+5) create site archive:
+
+tar -cvzf site.tar.gz * --exclude='app/etc/local.xml' --exclude='media'
