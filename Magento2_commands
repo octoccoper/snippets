@@ -3,10 +3,12 @@
 rm -rf var/cache/* var/page_cache/* var/view_preprocessed/* var/tmp/* generated/* pub/static/* ; php bin/magento setup:upgrade ; php bin/magento setup:di:compile ; php bin/magento indexer:reindex ; php bin/magento setup:static-content:deploy -f en_US de_DE
 
 
-2) Create new admin user
+2) Create / Update new admin user
 
 UPDATE admin_user SET `password` = SHA2('NewPassword', 256) WHERE `username`='admin';
-
+or
+create:
+php bin/magento admin:user:create --admin-user="admin2" --admin-password="Admin123" --admin-email="admin@gmail.com" --admin-firstname="Admin2" --admin-lastname="Admin2"
 
 3) Basic permissions setup
 
