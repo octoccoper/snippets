@@ -1,0 +1,5 @@
+$html = [];
+$html[] = '<span class="my-class">'
+$html[] = $label
+$html[] = '</span>
+return implode("", $html);
