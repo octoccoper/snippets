@@ -40,3 +40,105 @@ chmod u+x bin/magento (add the execute permissions for bin/magento)
 5) create site archive:
 
 tar -cvzf site.tar.gz * --exclude='app/etc/local.xml' --exclude='media'
+
+6) list of command shortcuts:
+
+Setup upgrade:
+
+php bin/magento s:up
+
+Cache Flush:
+
+php bin/magento c:f
+
+Disable Cache:
+
+php bin/magento c:d
+
+Enable Cache:
+
+​​​​​​php bin/magento c:e
+
+Static Content Deploy:
+
+php bin/magento s:s:d
+
+Di Compile:
+
+php bin/magento s:d:c
+
+Var clean folder:
+
+php bin/magento v:c
+
+Uninstall Magento application:
+
+php bin/magento s:un
+
+Runs cron job scheduled for setup application:
+
+php bin/magento s:c:r
+
+Disables specified modules:
+
+php bin/magento mo:d CompanyName_ModuleName
+
+Enables specified modules:
+
+php bin/magento mo:e CompanyName_ModuleName
+
+Displays status of modules:
+
+php bin/magento mo:s
+
+Uninstalls modules installed by composer (which only installed by composer):
+
+php bin/magento mo:u CompanyName_ModuleName
+
+Cleans cache type(s):
+
+php bin/magento c:c
+
+Disables cache type(s):
+
+php bin/magento c:d
+
+Enables cache type(s):
+
+php bin/magento c:e
+
+Flushes cache storage used by cache type(s):
+
+php bin/magento c:f
+
+Checks cache status:
+
+php bin/magento c:s
+
+Enable Maintenance Mode Using Command Line:
+
+php bin/magento ma:e
+
+Disable Maintenance Mode Using Command Line:
+
+php bin/magento ma:d
+
+Shows allowed Indexers:
+
+php bin/magento i:i
+
+Reindexes Data:
+
+php bin/magento i:rei
+
+Resets indexer status to invalid:
+
+php bin/magento i:res
+
+Sets index mode type:
+
+php bin/magento i:res
+
+Shows status of Indexer:
+
+php bin/magento i:st
