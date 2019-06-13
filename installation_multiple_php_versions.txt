@@ -1,0 +1,64 @@
+Install PHP 5.6
+Step 1: Update Apt-Get
+
+As always, we update and upgrade our package manager before beginning an installation. If you are currently running PHP 7.X, after updating apt-get, continue to step 2 to downgrade to PHP 5.6.
+
+apt-get update && apt-get upgrade
+
+Step 2: Install PHP 5.6
+Install the PHP5.6 repository with these two commands.
+
+apt-get install -y software-properties-common
+
+add-apt-repository ppa:ondrej/php
+
+apt-get update
+
+apt-get install -y php5.6
+
+PHP Version for Apache
+Step 3: Switch PHP 7.0 to PHP 5.6
+Switch from PHP 7.0 to PHP 5.6 while restarting Apache to recognize the change:
+
+a2dismod php7.0 ; a2enmod php5.6 ; service apache2 restart
+
+
+Note
+Optionally you can switch back to PHP 7.0 with the following command:
+a2dismod php5.6 ; a2enmod php7.0 ; service apache2 restart
+Verify that PHP 5.6 is running on Apache by putting up a PHP info page. To do so, use the code below in a file named as infopage.php and upload it to the /var/www/html directory.
+
+<? phpinfo(); ?>
+
+By visiting http://xxx.xxx.xxx.xxx/infopage.php (replacing the x’s with your server’s IP address), you’ll see a PHP info banner similar to this one, confirming the PHP Version for Apache:
+
+Example of PHP Info page
+
+Continue onto the section PHP Version for Ubuntu to edit the PHP binary from the command line.
+
+PHP Version for Ubuntu
+Step 4: Edit PHP Binary
+
+Maintenance of symbolic links or the /etc/alternatives path through the update-alternatives command.
+
+update-alternatives --config php
+
+Output:
+There are 2 choices for the alternative php (providing /usr/bin/php).
+Selection Path Priority Status
+------------------------------------------------------------
+* 0 /usr/bin/php7.0 70 auto mode
+1 /usr/bin/php5.6 56 manual mode
+2 /usr/bin/php7.0 70 manual mode
+Press to keep the current choice[*], or type selection number:
+
+Select php5.6 version to be set as default, in this case, its the number one option.
+
+You can now verify that PHP 5.6 is the default by running:
+php -v
+
+Output:
+PHP 5.6.37-1+ubuntu16.04.1+deb.sury.org+1 (cli)
+Copyright (c) 1997-2016 The PHP Group
+Zend Engine v2.6.0, Copyright (c) 1998-2016 Zend Technologies
+with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
