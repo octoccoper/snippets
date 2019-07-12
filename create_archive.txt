@@ -1,0 +1,1 @@
+tar -cvzf media.tar.gz media/*
