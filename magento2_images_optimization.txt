@@ -1,0 +1,1 @@
+/usr/bin/find ./pub/media -type f -name "*.jpg" -exec /usr/bin/jpegoptim -m70 --strip-all {} \; && /usr/bin/find ./pub/media -type f -name "*.png" -exec /usr/bin/optipng -o2 {} \;
